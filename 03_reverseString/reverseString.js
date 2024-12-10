@@ -1,15 +1,15 @@
 const reverseString = function(input) {
 
-    let reverse = input.map()
-    let reversed = ""
-    for(i = reverse; i > 0; i--)
+    let reverse = input.split("")
+    
+    let reversed = "";
+    for(i = reverse.length -1; i > -1; i--)
     {
         reversed = reversed += reverse[i]
     }
-
+    console.log(`this is the reversed variable ${reversed}`)
     return reversed;
 };
 
-console.log(reverseString(test));
-// Do not edit below this line
+console.log(reverseString("testing"));
 module.exports = reverseString;
