@@ -1,27 +1,19 @@
 const leapYears = function(year) {
-
     let isLeapYear = false;
     
-    if(year < 100 && year %4 === 0) {
-       
-        isLeapYear = true
-    }
-    else if(year > 100 && year % 4 === 0) {
-        isLeapYear = true
-
-       if(year < 400 && year % 100 === 0) {
-            isLeapYear = false;
-       }
-        
-    }
-    else if(year > 100 && year % 4 === 0 && year % 100 === 0) {
-        
+    const isYearDivisibleByFour = year % 4 === 0;
+    const isYearDivisibleByCentury = year % 100 === 0;
+    const isYearDivisibleByFourHundred = year % 400 === 0;
+    
+    if(isYearDivisibleByFour &&
+        (!isYearDivisibleByCentury || isYearDivisibleByFourHundred)) {
+            isLeapYear = true
+        }
+    else {
         isLeapYear = false;
     }
-    else if(year > 100 && year % 4 === 0 && year % 400 === 0) {
-        
-        isLeapYear = true;
-    }
+       
+    
 
     
     console.log(`${year} is a leap year : ${isLeapYear}`)

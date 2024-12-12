@@ -1,17 +1,28 @@
-const add = function() {
-	
+const add = function(a,b) {
+	let c = a+b
+  return c
 };
 
-const subtract = function() {
-	
+const subtract = function(a,b) {
+	let c = a-b
+  return c
 };
 
-const sum = function() {
-	
+const sum = function(arr) {
+	let c = 0
+  arr.forEach(element => {
+    c = c += element
+  });
+  return c
 };
 
-const multiply = function() {
-
+//need to work on this
+const multiply = function(arr) {
+  arr.forEach(element => {
+    let c = 0
+    c = c *= element
+  });
+  return c
 };
 
 const power = function() {
