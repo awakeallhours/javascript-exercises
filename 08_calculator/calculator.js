@@ -16,23 +16,45 @@ const sum = function(arr) {
   return c
 };
 
-//need to work on this
 const multiply = function(arr) {
-  arr.forEach(element => {
-    let c = 0
-    c = c *= element
-  });
-  return c
+  let total = arr[0]
+  for(let i = 1; i < arr.length; i++) {
+    total = total *= arr[i]
+  }
+  console.log(`Total ${total}`)
+  return total
 };
 
-const power = function() {
-	
+const power = function(num, power) {
+	let total = Math.pow(num, power)
+  console.log(total)
+  
+  return total
+  
 };
 
-const factorial = function() {
-	
+const factorial = function(num) {
+  let ans = num;
+  console.log(`Factors of ${num}`)
+  if(num === 0) {
+    ans = 1;
+    console.log(ans)
+    return ans
+  }
+	for(let i=1; i < num; i++)
+  {
+    console.log(`answer = ans ${ans} *= i${i} ${ans *=i}`)
+    console.log(`answer ${ans}`)
+    
+    //console.log(`log of i ${i}`)
+    
+  }
+  return ans
 };
 
+//multiply([4,5,6])
+//power(4,3)
+factorial(0)
 // Do not edit below this line
 module.exports = {
   add,
