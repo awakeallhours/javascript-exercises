@@ -20,13 +20,15 @@ people = [
 const findTheOldest = function(arr) {
     
     
-    let peeps = []
-    return peeps.map((arr) => {
-        let name = peeps.name
-        console.log(name)
-        console.log(peeps)
-        console.log(peeps.yearOfBirth)
+    const peeps = arr.map(person => {
+      
     })
+      //array still not working
+      console.log(person.name)
+      console.log(peeps)
+      console.log(peeps.yearOfBirth)
+
+    
     /*let DOB = 2013;
     let DOD = 2020;
     let age = DOD - DOB
