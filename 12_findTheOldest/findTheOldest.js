@@ -1,4 +1,4 @@
-//cant copy the array for some reason
+
 
 people = [
     {
@@ -17,26 +17,33 @@ people = [
     },
   ]
 
-const findTheOldest = function(arr) {
+const getAge = function (DOB, DOD) {
+    let dateTime = new Date()
+    dateTime = dateTime.toISOString().split('T')[0]
+    //console.log(dateTime.toISOString().split('T')[0])
+    //let currentDate = dateTime.split("T")
+    if(!DOD)
+    {
+        DOD = dateTime
+    }
+    let age = DOD - DOB
+    console.log(dateTime)
+    //console.log(age)
+    return age
+}
+
+const findTheOldest = function(people) {
     
-    
-    const peeps = arr.map(person => {
+    return people.reduce((oldest,current) => {
       
     })
-      //array still not working
-      console.log(person.name)
-      console.log(peeps)
-      console.log(peeps.yearOfBirth)
+      
 
     
-    /*let DOB = 2013;
-    let DOD = 2020;
-    let age = DOD - DOB
-    console.log(age)
-    console.log(peeps)*/
-    //return peeps
+   
+    
 };
-
-findTheOldest(people)
+getAge(2013)
+//findTheOldest(people)
 // Do not edit below this line
 module.exports = findTheOldest;
