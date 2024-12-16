@@ -17,24 +17,32 @@ people = [
     },
   ]
 
-const getAge = function (DOB, DOD) {
-    let dateTime = new Date()
-    dateTime = dateTime.toISOString().split('T')[0]
-    //console.log(dateTime.toISOString().split('T')[0])
-    //let currentDate = dateTime.split("T")
-    if(!DOD)
+const getAge = function (birth, death) {
+    
+    if(!death)
     {
-        DOD = dateTime
+        death = new Date().getFullYear();
+       
     }
-    let age = DOD - DOB
-    console.log(dateTime)
+    return death - birth;
+    //console.log(currentYear)
     //console.log(age)
-    return age
+    //return age
 }
 
 const findTheOldest = function(people) {
     
-    return people.reduce((oldest,current) => {
+    return people.reduce((oldest,currentPerson) => {
+      
+      const oldestAge = getAge(oldest.yearOfBirth, oldest.yearOfDeath)
+      const currentAge = getAge(currentPerson.yearOfBirth, currentPerson.yearOfDeath)
+      
+      console.log(`oldest age ${oldestAge}`)
+      console.log(`current person ${currentPerson.name}`)
+      let answer = oldestAge < currentAge ? currentPerson : oldest
+
+      //console.log(answer)
+      return answer
       
     })
       
@@ -43,7 +51,8 @@ const findTheOldest = function(people) {
    
     
 };
-getAge(2013)
-//findTheOldest(people)
+//getAge(2013)
+findTheOldest(people)
+
 // Do not edit below this line
 module.exports = findTheOldest;
